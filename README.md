@@ -3,7 +3,7 @@
 YAY! its vacation time!!!!
 Congratulations! I've decided to treat myself  a long holiday vacation in Honolulu, Hawaii! To help with my trip planning, I need to do some climate analysis on the area. The following outlines what I need to do.
 
-## Step 1 - Climate Analysis and Exploration
+# Step 1 - Climate Analysis and Exploration and Results
 
 To begin, use Python and SQLAlchemy to do basic climate analysis and data exploration of  climate database. All of the following analysis were completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 
@@ -18,15 +18,17 @@ To begin, use Python and SQLAlchemy to do basic climate analysis and data explor
 
 * Start by finding the most recent date in the data set.
 
-* Using this date, retrieve the average precipitation per day for the previous 12 months. The query should be sorted by date ascending. **Note** we do not pass in the date as a variable to your query.
+* Using this date, retrieve the average precipitation per day for the previous 12 months. The query should be sorted by date ascending. 
 
 * Load the query results into a Pandas DataFrame and set the index to the date column.
 
-* Plot the results using the DataFrame `plot` method. **NOTE: Your plot will look different from the one below.**
+* Plot the results using the DataFrame `plot` method.
 
-  ![precipitation](Images/precipitation.png)
+* Use Pandas to print the summary statistics for the precipitation data.
+## RESULTS 1
+![precipitation analysis image](https://github.com/saumya-datascience/sqlalchemy-challenge/blob/main/images-sol/precipitation.png)
 
-* Use Pandas to print the summary statistics for the precipitation data. **HINT:** This will be a single line of code.
+![summary statistics image](https://github.com/saumya-datascience/sqlalchemy-challenge/blob/main/images-sol/summary_statistics.png)
 
 ### Station Analysis
 
@@ -38,15 +40,15 @@ To begin, use Python and SQLAlchemy to do basic climate analysis and data explor
 
 * Calculate the lowest, highest, and average temperature for that station id (i.e., the one with the greatest number of observations).
 
-* **Hint:** You will need to use functions in your queries.
-
 * Design a query to retrieve the last 12 months of temperature observation data (TOBS) for the most active station.
+## RESULTS
+ * The station Histogram image
 
-  * Plot the results as a histogram with `bins=12`.
+ ![station-histogram](https://github.com/saumya-datascience/sqlalchemy-challenge/blob/main/images-sol/station_histogram.png)
+ 
+ The code for all the analysis can be found here.
+ [code](https://github.com/saumya-datascience/sqlalchemy-challenge/blob/main/climate_starter.ipynb)
 
-    ![station-histogram](Images/station-histogram.png)
-
-* Close out your session.
 
 - - -
 
@@ -88,14 +90,13 @@ Now that you have completed your initial analysis, design a Flask API based on t
   * When given the start and the end date, calculate the minimum, average, and maximum obvserved temperature for dates between the start and end date inclusive.
   
   * Return a JSONified dictionary of these minimum, maximum, and average temperatures.
+## RESULTS
+* The Flask api file can be find in the following link
 
+[The api file](https://github.com/saumya-datascience/sqlalchemy-challenge/blob/main/homework.py)
 - - -
 
-## Hints
-
-* Pay very close attention to the requested JSON response format (are we asking for a JSON list or a dictionary? or a list of dictionaries?).
-
-* Remember, a JSON list and dictionary is different from a regular python list and dictionary.
+## Time for Bonus and yes ofcourse I did
 
 ## Bonus: Other Recommended Analyses
 
@@ -103,7 +104,7 @@ Now that you have completed your initial analysis, design a Flask API based on t
 
 * These are challenging and the starter notebook does not give you as much guidance as you are used to. This is intentional. It is up to you to closely follow directions and get the results.
 
-* Use the provided [temp_analysis_bonus_1_starter.ipynb](temp_analysis_bonus_1_starter.ipynb) and [temp_analysis_bonus_1_starter](temp_analysis_bonus_2_starter.ipynb) starter notebooks for each bonus challenge.
+
 
 ### Temperature Analysis I
 
@@ -114,6 +115,10 @@ Now that you have completed your initial analysis, design a Flask API based on t
 * Identify the average temperature in June at all stations across all available years in the dataset. Do the same for December temperature.
 
 * Use the t-test to determine whether the difference in the means, if any, is statistically significant. Will you use a paired t-test, or an unpaired t-test? Why?
+## RESULTS
+The jupyter code can be find at the following link.
+[the code](https://github.com/saumya-datascience/sqlalchemy-challenge/blob/main/temp_analysis_bonus_1_starter.ipynb)
+
 
 ### Temperature Analysis II
 
@@ -131,8 +136,7 @@ Now that you have completed your initial analysis, design a Flask API based on t
 
   * Use the peak-to-peak (TMAX-TMIN) value as the y error bar (YERR).
 
-    ![temperature](Images/temperature.png)
-
+   
 ### Daily Rainfall Average
 
 * Now that you have an idea of the temperature lets check to see what the rainfall has been, you don't want a when it rains the whole time!
@@ -153,18 +157,11 @@ Now that you have completed your initial analysis, design a Flask API based on t
 
 * Use Pandas to plot an area plot (`stacked=False`) for the daily normals.
 
-  ![daily-normals](Images/daily-normals.png)
+## Results
+![the daily normals area plot](https://github.com/saumya-datascience/sqlalchemy-challenge/blob/main/images-sol/normals.png)
 
-## Rubric
+* the code can be found in the following link
+[code](https://github.com/saumya-datascience/sqlalchemy-challenge/blob/main/temp_analysis_bonus_2_starter.ipynb) 
 
-[Unit 10 Rubric - SQLAlchemy Homework - Surfs Up!](https://docs.google.com/document/d/1gT29iMF3avSvJruKpcHY4qovP5QitgXePqtjC6XESI0/edit?usp=sharing)
 
-- - -
 
-## References
-
-Menne, M.J., I. Durre, R.S. Vose, B.E. Gleason, and T.G. Houston, 2012: An overview of the Global Historical Climatology Network-Daily Database. Journal of Atmospheric and Oceanic Technology, 29, 897-910, [https://doi.org/10.1175/JTECH-D-11-00103.1](https://doi.org/10.1175/JTECH-D-11-00103.1)
-
-- - -
-
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
